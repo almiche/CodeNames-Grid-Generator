@@ -1,4 +1,4 @@
-[![Generic badge](https://img.shields.io/badge/<GHPAGES>-<UP>-<GREEN>.svg)](https://almiche.github.io/CodeNames-Grid-Generator/index.html)
+[![Generic badge](https://img.shields.io/badge/GHPAGES-UP-GREEN.svg)](https://almiche.github.io/CodeNames-Grid-Generator/index.html)
 # CodeNames-Grid-Generator 🎯🎲♟
 Randomly generate new grids for the popular boardgame CodeNames. Simply press the button and there you go a brand new randomly generated grid !
 
