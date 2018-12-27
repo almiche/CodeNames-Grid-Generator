@@ -1,0 +1,12 @@
+td {
+    width:7em;
+    height: 7em;
+    border:1px;
+    border-style:solid;
+}
+
+#grid {
+    border-width: 20px;
+    border-style: solid;
+    margin-top:3em;
+}
