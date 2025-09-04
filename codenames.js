@@ -1,40 +1,40 @@
-$( document ).ready(function() {
-    // Handler for .ready() called.
-    function createField(){
-        $(`td`).css("background-color","white");
-        var counter = 0;
-        var previous_values = new Set();
-        var startingTeam = Math.round(Math.random());
-        
-        var startingTeamColor = "#1e88e5";
-        var otherTeamColor = "#d32f2f";
-        if (startingTeam == 1){
+document.addEventListener('DOMContentLoaded', function() {
+    function createField() {
+        document.querySelectorAll('td').forEach(td => {
+            td.style.backgroundColor = "white";
+        });
+
+        let counter = 0;
+        let previous_values = new Set();
+        let startingTeam = Math.round(Math.random());
+
+        let startingTeamColor = "#1e88e5";
+        let otherTeamColor = "#d32f2f";
+        if (startingTeam === 1) {
             [startingTeamColor, otherTeamColor] = [otherTeamColor, startingTeamColor];
         }
-        $("#grid").css("border-color",startingTeamColor);
+        document.getElementById("grid").style.borderColor = startingTeamColor;
 
-        while (counter < 18 ){
-            var random = Math.floor(Math.random() * (25 - 1 + 1)) + 1;
-            if (!previous_values.has(random)){
-                if (counter < 8){
-                    $(`#${random}`).css("background-color",otherTeamColor);
+        while (counter < 18) {
+            let random = Math.floor(Math.random() * 25) + 1;
+            if (!previous_values.has(random)) {
+                if (counter < 8) {
+                    document.getElementById(random.toString()).style.backgroundColor = otherTeamColor;
+                } else if (counter > 8 && counter < 17) {
+                    document.getElementById(random.toString()).style.backgroundColor = startingTeamColor;
+                } else {
+                    document.getElementById(random.toString()).style.backgroundColor = "grey";
                 }
-                else if (counter > 8 && counter < 25){
-                    $(`#${random}`).css("background-color",startingTeamColor);
-                }
-                else {
-                    $(`#${random}`).css("background-color","grey");
-                }
-                previous_values.add(random)
+                previous_values.add(random);
                 counter++;
             }
         }
     }
 
-    var intervalId = setInterval(createField,150);
+    let intervalId = setInterval(createField, 150);
 
-    $("#generate").on("click",function(){
+    document.getElementById("generate").addEventListener("click", function() {
         clearInterval(intervalId);
         createField();
-    })
+    });
 });
